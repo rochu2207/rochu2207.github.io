@@ -227,6 +227,139 @@ footer{
     padding:22px;
   }
 }
+  /* Catchy engineering portfolio polish */
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(7,26,47,.15) 1px,transparent 1px),
+    linear-gradient(rgba(7,26,47,.15) 1px,transparent 1px);
+  background-size:42px 42px;
+  pointer-events:none;
+  opacity:.22;
+}
+
+.hero .wrap{
+  position:relative;
+  z-index:1;
+}
+
+.hero .kicker{
+  display:inline-block;
+  color:#55d6ff;
+  border:1px solid rgba(85,214,255,.35);
+  background:rgba(85,214,255,.08);
+  padding:7px 12px;
+  border-radius:999px;
+}
+
+.hero h1{
+  text-shadow:0 5px 25px rgba(0,0,0,.20);
+}
+
+.section-head h2::after{
+  content:"";
+  display:block;
+  width:64px;
+  height:4px;
+  margin-top:16px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#0878ed,#55d6ff);
+}
+
+.card{
+  position:relative;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(8,120,237,0);
+  transition:.25s ease;
+}
+
+.card:hover::after{
+  box-shadow:inset 0 0 0 1px rgba(8,120,237,.32);
+}
+
+.card .tag{
+  color:#0878ed;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#0878ed,#0564cf);
+  box-shadow:0 6px 16px rgba(8,120,237,.20);
+}
+
+.btn.primary:hover{
+  box-shadow:0 10px 24px rgba(8,120,237,.30);
+}
+
+.skills{
+  position:relative;
+  overflow:hidden;
+}
+
+.skills::before{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  right:-140px;
+  top:-160px;
+  border-radius:50%;
+  background:rgba(85,214,255,.10);
+}
+
+.skills .wrap{
+  position:relative;
+}
+
+.chip{
+  padding:10px 15px;
+  transition:.2s ease;
+}
+
+.chip:hover{
+  transform:translateY(-3px);
+  border-color:#0878ed;
+  box-shadow:0 8px 18px rgba(8,120,237,.12);
+}
+
+#contact{
+  background:linear-gradient(135deg,#071a2f,#0b3158);
+  color:#fff;
+}
+
+#contact .section-head h2,
+#contact .section-head p,
+#contact .kicker{
+  color:#fff;
+}
+
+#contact .section-head h2::after{
+  background:#55d6ff;
+}
+
+#contact .panel{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  box-shadow:0 18px 45px rgba(0,0,0,.16);
+}
+
+#contact a{
+  color:#55d6ff;
+}
 </style>
 </head>
 <body>
