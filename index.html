@@ -361,13 +361,88 @@ footer{
 #contact a{
   color:#55d6ff;
 }
+#contact a{
+    color:#55d6ff;
+}
 
+/* Animated engineering blueprint */
+.blueprint-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.blueprint-bg svg{
+  width:100%;
+  height:100%;
+  opacity:.32;
+}
+
+.blueprint-lines{
+  fill:none;
+  stroke:#55d6ff;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.blueprint-lines path{
+  stroke-dasharray:1400;
+  stroke-dashoffset:1400;
+  animation:drawBlueprint 5s ease forwards;
+}
+
+.blueprint-lines path:nth-child(2){animation-delay:.25s}
+.blueprint-lines path:nth-child(3){animation-delay:.5s}
+.blueprint-lines path:nth-child(4){animation-delay:.75s}
+.blueprint-lines path:nth-child(5){animation-delay:1s}
+.blueprint-lines path:nth-child(6){animation-delay:1.25s}
+.blueprint-lines path:nth-child(7){animation-delay:1.5s}
+.blueprint-lines path:nth-child(8){animation-delay:1.75s}
+.blueprint-lines path:nth-child(9){animation-delay:2s}
+.blueprint-lines path:nth-child(10){animation-delay:2.25s}
+
+@keyframes drawBlueprint{
+  to{
+    stroke-dashoffset:0;
+  }
+}
+
+.hero .wrap > :not(.blueprint-bg){
+  position:relative;
+  z-index:2;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .blueprint-lines path{
+    animation:none;
+    stroke-dashoffset:0;
+  }
+}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap"><div class="brand">Rochak Lamsal Portfolio</div><div class="links"><a href="#about">About</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero"><div class="wrap">
+  <div class="blueprint-bg" aria-hidden="true">
+  <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+    <g class="blueprint-lines">
+      <path d="M650 420 L650 155 L1080 155 L1080 420"/>
+      <path d="M700 420 L700 205 L1030 205 L1030 420"/>
+      <path d="M650 270 L1080 270"/>
+      <path d="M650 340 L1080 340"/>
+      <path d="M650 155 L865 65 L1080 155"/>
+      <path d="M700 205 L865 125 L1030 205"/>
+      <path d="M760 420 L760 340 L840 340 L840 420"/>
+      <path d="M900 420 L900 340 L980 340 L980 420"/>
+      <path d="M735 235 L790 235 L790 270 L735 270"/>
+      <path d="M930 235 L985 235 L985 270 L930 270"/>
+    </g>
+  </svg>
+</div>
 <div class="kicker">Civil Engineering Portfolio · London</div>
 <h1>Building engineering knowledge through real academic projects.</h1>
 <p>I'm <strong>Rochak Lamsal</strong>, a third-year Civil Engineering student at the University of Roehampton. Rochak Lamsal Portfolio presents selected coursework and practical experience in structural design, surveying, AutoCAD and fluid mechanics.</p>
