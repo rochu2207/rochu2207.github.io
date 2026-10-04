@@ -394,15 +394,25 @@ footer{
   animation:drawBlueprint 5s ease forwards;
 }
 
-.blueprint-lines path:nth-child(2){animation-delay:.25s}
-.blueprint-lines path:nth-child(3){animation-delay:.5s}
-.blueprint-lines path:nth-child(4){animation-delay:.75s}
-.blueprint-lines path:nth-child(5){animation-delay:1s}
-.blueprint-lines path:nth-child(6){animation-delay:1.25s}
-.blueprint-lines path:nth-child(7){animation-delay:1.5s}
-.blueprint-lines path:nth-child(8){animation-delay:1.75s}
-.blueprint-lines path:nth-child(9){animation-delay:2s}
-.blueprint-lines path:nth-child(10){animation-delay:2.25s}
+/* Structural frame draws first */
+.blueprint-lines path:nth-child(-n+12){
+  animation-delay:.15s;
+}
+
+/* Bracing, roof and foundations */
+.blueprint-lines path:nth-child(n+13):nth-child(-n+20){
+  animation-delay:1s;
+}
+
+/* Tower crane */
+.blueprint-lines path:nth-child(n+21):nth-child(-n+35){
+  animation-delay:1.8s;
+}
+
+/* Technical details and surveying equipment */
+.blueprint-lines path:nth-child(n+36){
+  animation-delay:2.6s;
+}
 
 @keyframes drawBlueprint{
   to{
@@ -427,21 +437,90 @@ footer{
 <nav class="nav"><div class="wrap"><div class="brand">Rochak Lamsal Portfolio</div><div class="links"><a href="#about">About</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="blueprint-bg" aria-hidden="true">
-  <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
-    <g class="blueprint-lines">
-      <path d="M650 420 L650 155 L1080 155 L1080 420"/>
-      <path d="M700 420 L700 205 L1030 205 L1030 420"/>
-      <path d="M650 270 L1080 270"/>
-      <path d="M650 340 L1080 340"/>
-      <path d="M650 155 L865 65 L1080 155"/>
-      <path d="M700 205 L865 125 L1030 205"/>
-      <path d="M760 420 L760 340 L840 340 L840 420"/>
-      <path d="M900 420 L900 340 L980 340 L980 420"/>
-      <path d="M735 235 L790 235 L790 270 L735 270"/>
-      <path d="M930 235 L985 235 L985 270 L930 270"/>
-    </g>
-  </svg>
+ <div class="blueprint-bg" aria-hidden="true">
+<svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+<g class="blueprint-lines">
+
+<!-- MULTI-STOREY BUILDING -->
+<path d="M665 425 L665 215 M735 425 L735 195 M805 425 L805 180 M875 425 L875 165 M945 425 L945 150"/>
+
+<!-- FLOOR SLABS -->
+<path d="M640 425 L970 425"/>
+<path d="M640 380 L970 380"/>
+<path d="M645 335 L970 335"/>
+<path d="M650 290 L970 290"/>
+<path d="M655 245 L970 245"/>
+<path d="M665 200 L970 200"/>
+<path d="M700 160 L950 160"/>
+
+<!-- FLOOR DEPTH / DOUBLE LINES -->
+<path d="M640 418 L970 418 M640 373 L970 373 M645 328 L970 328 M650 283 L970 283 M655 238 L970 238"/>
+
+<!-- STRUCTURAL BRACING -->
+<path d="M665 380 L735 335 M735 380 L665 335"/>
+<path d="M805 335 L875 290 M875 335 L805 290"/>
+<path d="M875 245 L945 200 M945 245 L875 200"/>
+
+<!-- BUILDING TOP / PARTIAL FRAME -->
+<path d="M700 160 L735 140 L805 140 L845 160"/>
+<path d="M735 140 L735 195 M805 140 L805 180"/>
+
+<!-- FOUNDATION PADS -->
+<path d="M645 425 L685 425 L695 443 L635 443 Z"/>
+<path d="M785 425 L825 425 L835 443 L775 443 Z"/>
+<path d="M925 425 L965 425 L975 443 L915 443 Z"/>
+
+<!-- TOWER CRANE MAST -->
+<path d="M985 425 L985 105 M1020 425 L1020 105"/>
+<path d="M985 385 L1020 345 M1020 385 L985 345"/>
+<path d="M985 305 L1020 265 M1020 305 L985 265"/>
+<path d="M985 225 L1020 185 M1020 225 L985 185"/>
+<path d="M985 145 L1020 105 M1020 145 L985 105"/>
+
+<!-- CRANE JIB -->
+<path d="M760 105 L1160 105"/>
+<path d="M760 105 L1002 72 L1160 105"/>
+
+<!-- CRANE JIB LATTICE -->
+<path d="M790 101 L820 96 L850 101 L880 89 L910 101 L940 81 L970 101 L1002 72"/>
+<path d="M1030 80 L1060 101 L1090 86 L1120 103 L1150 98"/>
+
+<!-- CRANE REAR COUNTER JIB -->
+<path d="M1002 72 L1080 55 L1140 105"/>
+<path d="M1020 105 L1080 55"/>
+<path d="M1105 85 L1140 105"/>
+
+<!-- CRANE CABLE -->
+<path d="M880 96 L880 205"/>
+<path d="M872 205 L888 205"/>
+<path d="M880 205 L880 220"/>
+<path d="M870 220 Q880 235 890 220"/>
+
+<!-- GROUND DATUM -->
+<path d="M610 445 L1170 445"/>
+<path d="M620 452 L640 445 M655 452 L675 445 M690 452 L710 445 M725 452 L745 445 M760 452 L780 445 M795 452 L815 445 M830 452 L850 445 M865 452 L885 445 M900 452 L920 445 M935 452 L955 445"/>
+
+<!-- TECHNICAL DIMENSION LINE -->
+<path d="M620 200 L620 425"/>
+<path d="M612 200 L628 200 M612 425 L628 425"/>
+<path d="M605 200 L635 200 M605 425 L635 425"/>
+
+<!-- SURVEYING TOTAL STATION -->
+<path d="M1100 325 L1122 325 L1128 345 L1094 345 Z"/>
+<path d="M1103 325 L1107 308 L1119 308 L1123 325"/>
+<path d="M1108 308 L1108 298 L1118 298 L1118 308"/>
+<path d="M1098 345 L1070 440"/>
+<path d="M1111 345 L1111 440"/>
+<path d="M1124 345 L1150 440"/>
+<path d="M1082 398 L1140 398"/>
+
+<!-- SMALL SURVEY REFERENCE LINES -->
+<path d="M1113 298 L1160 275"/>
+<path d="M1113 298 L1165 298"/>
+<path d="M1158 291 L1165 298 L1158 305"/>
+
+</g>
+</svg>
 </div>
 <div class="kicker">Civil Engineering Portfolio · London</div>
 <h1>Building engineering knowledge through real academic projects.</h1>
