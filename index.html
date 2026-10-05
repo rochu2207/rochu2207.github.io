@@ -365,20 +365,172 @@ footer{
     color:#55d6ff;
 }
 
+/* ===== NEW ENGINEERING HERO ===== */
 
+.hero .wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(380px,.95fr);
+  gap:56px;
+  align-items:center;
+}
+
+.hero-copy{
+  min-width:0;
+}
+
+.hero h1{
+  max-width:720px;
+  font-size:clamp(44px,5vw,72px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  margin:18px 0 22px;
+}
+
+.hero h1 .accent{
+  color:#55d6ff;
+}
+
+.hero-copy > p{
+  max-width:680px;
+}
+
+/* Right project panel */
+
+.hero-project{
+  position:relative;
+  z-index:2;
+  padding:30px;
+  border:1px solid rgba(85,214,255,.32);
+  border-radius:16px;
+  background:rgba(4,25,45,.68);
+  backdrop-filter:blur(10px);
+  box-shadow:0 24px 60px rgba(0,0,0,.22);
+}
+
+.project-number{
+  color:#55d6ff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+.hero-project h3{
+  margin:0 0 6px;
+  font-size:28px;
+  color:white;
+}
+
+.hero-project .subtitle{
+  color:#cbd9e8;
+  margin-bottom:26px;
+}
+
+.project-meta{
+  border-top:1px solid rgba(255,255,255,.14);
+  border-bottom:1px solid rgba(255,255,255,.14);
+  padding:18px 0;
+  margin-bottom:22px;
+}
+
+.project-meta div{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  padding:6px 0;
+  color:#dce8f4;
+}
+
+.project-meta span:first-child{
+  color:#8fa8bd;
+}
+
+.project-link{
+  color:#55d6ff;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.project-link:hover{
+  text-decoration:underline;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+  .hero .wrap{
+    grid-template-columns:1fr;
+  }
+
+  .hero-project{
+    max-width:600px;
+  }
+}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap"><div class="brand">Rochak Lamsal Portfolio</div><div class="links"><a href="#about">About</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero">
+  <div class="wrap">
 
-<div class="kicker">Civil Engineering Portfolio · London</div>
-<h1>Building engineering knowledge through real academic projects.</h1>
-<p>I'm <strong>Rochak Lamsal</strong>, a third-year Civil Engineering student at the University of Roehampton. Rochak Lamsal Portfolio presents selected coursework and practical experience in structural design, surveying, AutoCAD and fluid mechanics.</p>
-<div class="actions"><a class="btn primary" href="#work">Explore my work</a><a class="btn secondary" href="autocad-year-2.dwg" download>Download AutoCAD DWG</a><a class="btn primary" href="https://www.linkedin.com/in/rochak-lamsal-b92a7832a" target="_blank" rel="noopener">LinkedIn Profile</a></div>
-  
-</div></header>
+    <div class="hero-copy">
+      <div class="kicker">Civil Engineering Portfolio · London</div>
+
+      <h1>
+        Building engineering knowledge through
+        <span class="accent">real academic projects.</span>
+      </h1>
+
+      <p>
+        I'm <strong>Rochak Lamsal</strong>, a third-year Civil Engineering
+        student at the University of Roehampton. My portfolio presents
+        selected coursework and practical experience in structural design,
+        surveying, AutoCAD and fluid mechanics.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#work">Explore my work</a>
+        <a class="btn secondary" href="autocad-year-2.dwg" download>
+          Download AutoCAD DWG
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-project">
+      <div class="project-number">Selected Work / 01</div>
+
+      <h3>Structural Design</h3>
+      <div class="subtitle">Multi-storey RC Frame</div>
+
+      <div class="project-meta">
+        <div>
+          <span>Discipline</span>
+          <strong>Structures</strong>
+        </div>
+
+        <div>
+          <span>Software</span>
+          <strong>AutoCAD</strong>
+        </div>
+
+        <div>
+          <span>Focus</span>
+          <strong>RC Design</strong>
+        </div>
+
+        <div>
+          <span>Portfolio</span>
+          <strong>Academic Work</strong>
+        </div>
+      </div>
+
+      <a class="project-link" href="#work">View project →</a>
+    </aside>
+
+  </div>
+</header>
 
 <section id="about"><div class="wrap">
 <div class="section-head"><div class="kicker blue">About</div><h2>Developing civil engineering knowledge through academic and practical projects..</h2></div>
